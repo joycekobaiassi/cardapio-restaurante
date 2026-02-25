@@ -13,7 +13,7 @@ header {
 }
 
 .logo {
-  width: 320px;
+  width: 520px;
   max-width: 80%;
   height: auto;
   margin-bottom: 10px;
@@ -69,4 +69,5 @@ footer {
   background: #000;
   color: #aaa;
 }
+
 
