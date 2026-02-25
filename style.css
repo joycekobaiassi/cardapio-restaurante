@@ -1,14 +1,15 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #111;
+  background-color: #0f0f0f;
   color: white;
 }
 
 header {
   text-align: center;
   padding: 30px 20px;
-  background: #d62828;
+  background: #000; /* preto elegante */
+  border-bottom: 2px solid #222; /* detalhe sofisticado */
 }
 
 .logo {
@@ -23,37 +24,48 @@ header {
 }
 
 .item {
-  background: #1e1e1e;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
+  background: #1a1a1a;
+  padding: 18px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+.item:hover {
+  transform: translateY(-3px);
+  border-color: #333;
 }
 
 .item h3 {
   margin: 0;
+  font-size: 18px;
 }
 
 button {
-  background: #f77f00;
+  background: #f4a261; /* laranja mais sofisticado */
   border: none;
-  padding: 10px;
+  padding: 10px 14px;
   margin-top: 10px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 6px;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 button:hover {
-  opacity: 0.8;
+  background: #e76f51;
 }
 
 .cart {
-  background: #222;
+  background: #141414;
   padding: 20px;
+  border-top: 2px solid #222;
 }
 
 footer {
   text-align: center;
-  padding: 10px;
+  padding: 12px;
   background: #000;
+  color: #aaa;
 }
