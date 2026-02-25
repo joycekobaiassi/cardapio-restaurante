@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobá Mania - Street Food</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <img src="sobamania.jpg" alt="Sobá Mania Logo" class="logo">
+  <h1>SOBÁ MANIA</h1>
+  <p>Street Food & Comida Caseira</p>
+  <p>📍 Entrega até 2km | 💳 Pix</p>
+</header>
+
+<h2>🍜 Pratos Orientais</h2>
+<section id="oriental" class="menu"></section>
+
+<h2>🍛 Comida Caseira</h2>
+<section id="caseiro" class="menu"></section>
+
+<h2>🥤 Bebidas & Extras</h2>
+<section id="bebidas" class="menu"></section>
+
+<div class="cart">
+  <h2>🛒 Seu Pedido</h2>
+  <ul id="cart-items"></ul>
+  <p id="total">Total: R$ 0,00</p>
+  <button onclick="finalizarPedido()">Finalizar no WhatsApp</button>
+  <button onclick="limparCarrinho()">Limpar Pedido</button>
+</div>
+
+<footer>
+  <p>Instagram: @sobamaniafloripa</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
