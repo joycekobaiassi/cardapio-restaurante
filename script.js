@@ -1,7 +1,5 @@
 // ================= PRODUTOS =================
 
-// ================= PRODUTOS =================
-
 const produtos = [
 
   // -------- ORIENTAL --------
@@ -12,7 +10,8 @@ const produtos = [
     categoria: "oriental",
     serve: "Serve 2 pessoas",
     carnes: true,
-    descricao: "Delicioso macarrão oriental servido com ovos e carne em tirinhas, finalizado com cebolinha fresca e um caldo quentinho e aromático. Uma combinação perfeita de sabor e conforto!",
+    imagem: "imagens/soba.png",
+    descricao: "Delicioso macarrão oriental servido com ovos e carne em tirinhas, finalizado com cebolinha fresca e um caldo quentinho e aromático.",
     adicionais: [
       { nome: "Gengibre ralado", preco: 5 },
       { nome: "Hashi", preco: 4 },
@@ -26,7 +25,8 @@ const produtos = [
     categoria: "oriental",
     serve: "Serve 1 pessoa",
     carnes: true,
-    descricao: "O mesmo sabor incrível em uma versão ideal para uma pessoa. Caldo quentinho, macarrão oriental, carne em tirinhas e cebolinha fresca.",
+    imagem: "imagens/soba.png",
+    descricao: "Versão individual com o mesmo sabor incrível.",
     adicionais: [
       { nome: "Gengibre ralado", preco: 5 },
       { nome: "Hashi", preco: 4 },
@@ -40,7 +40,8 @@ const produtos = [
     categoria: "oriental",
     serve: "Serve 2 pessoas",
     carnes: true,
-    descricao: "Macarrão oriental com cenoura, pimentões coloridos, vagem, ervilha, repolho, couve-flor, brócolis, moyashi, cebolinha e ovo de codorna. Tudo preparado com nosso tempero tradicional de família.",
+    imagem: "imagens/yakisoba.png",
+    descricao: "Macarrão oriental com legumes frescos e tempero tradicional.",
     adicionais: [
       { nome: "Gengibre ralado", preco: 5 },
       { nome: "Hashi", preco: 4 },
@@ -54,20 +55,8 @@ const produtos = [
     categoria: "oriental",
     serve: "Serve 2 pessoas",
     carnes: false,
-    descricao: "Uma explosão de sabores! Arroz soltinho com frango macio, cubinhos de abacaxi fresco, presunto, cenoura, cebolinha e tirinhas de ovo. O contraste entre o salgado e o doce deixa esse prato irresistível.",
-    adicionais: [
-      { nome: "Gengibre ralado", preco: 5 },
-      { nome: "Hashi", preco: 4 }
-    ]
-  },
-
-  {
-    nome: "Yakimeshi Especial 1kg",
-    preco: 78,
-    categoria: "oriental",
-    serve: "Serve 2 pessoas",
-    carnes: false,
-    descricao: "Arroz soltinho com frango desfiado, cubinhos de presunto, cenoura picada, tirinhas de ovo e cebolinha fresca. Leve, equilibrado e perfeito para qualquer momento.",
+    imagem: "imagens/yakimeshi.png",
+    descricao: "Arroz soltinho com frango, abacaxi, presunto e legumes.",
     adicionais: [
       { nome: "Gengibre ralado", preco: 5 },
       { nome: "Hashi", preco: 4 }
@@ -80,20 +69,8 @@ const produtos = [
     categoria: "oriental",
     serve: "Serve 1 pessoa",
     carnes: false,
-    descricao: "A versão individual dessa combinação deliciosa e reconfortante, com arroz soltinho, frango desfiado, presunto e legumes.",
-    adicionais: [
-      { nome: "Gengibre ralado", preco: 5 },
-      { nome: "Hashi", preco: 4 }
-    ]
-  },
-
-  {
-    nome: "Arroz Chinês 1kg",
-    preco: 75,
-    categoria: "oriental",
-    serve: "Serve 2 pessoas",
-    carnes: false,
-    descricao: "Arroz soltinho com lombo de porco macio, cenoura ralada, repolho, cebola, omelete em tiras e um toque de gergelim, envolvido em nosso molho agridoce de shoyu.",
+    imagem: "imagens/yakimeshi.png",
+    descricao: "Versão individual leve e saborosa.",
     adicionais: [
       { nome: "Gengibre ralado", preco: 5 },
       { nome: "Hashi", preco: 4 }
@@ -108,20 +85,12 @@ const produtos = [
     categoria: "caseiro",
     serve: "Serve 1 pessoa",
     carnes: false,
-    descricao: "Comida caseira feita com carinho: arroz soltinho, feijão fresquinho, bife acebolado suculento, batata frita crocante e salada. Uma refeição completa com gostinho de casa!",
+    imagem: "imagens/marmitex.png",
+    descricao: "Arroz, feijão, bife acebolado, fritas e salada.",
     adicionais: [
       { nome: "Ovo cozido", preco: 2 },
       { nome: "Salada extra de Legumes cozidos", preco: 4 }
     ]
-  },
-
-  {
-    nome: "Frango Xadrez com Arroz",
-    preco: 89,
-    categoria: "caseiro",
-    serve: "Serve 2 pessoas",
-    carnes: false,
-    descricao: "500g de frango xadrez com cenoura, pimentões coloridos e castanha crocante. Acompanha 500g de arroz soltinho."
   },
 
   {
@@ -130,7 +99,8 @@ const produtos = [
     categoria: "caseiro",
     serve: "Serve 1 pessoa",
     carnes: false,
-    descricao: "300g de contrafilé acebolado finalizado com molho especial da casa. Acompanha batatas fritas crocantes e molho verde caseiro.",
+    imagem: "imagens/porcaofie.png",
+    descricao: "Contrafilé acebolado com fritas crocantes.",
     adicionais: [
       { nome: "Molho verde extra", preco: 5 }
     ]
@@ -142,25 +112,8 @@ const produtos = [
     categoria: "caseiro",
     serve: "",
     carnes: false,
-    descricao: "Batatas sequinhas, crocantes por fora e macias por dentro. Perfeitas para acompanhar ou compartilhar!"
-  },
-
-  {
-    nome: "Chipa Paraguaia (4 un.)",
-    preco: 45,
-    categoria: "caseiro",
-    serve: "",
-    carnes: false,
-    descricao: "Tradicional e irresistível! Feita com polvilho e muito queijo. Crocante por fora, macia por dentro e com aquele toque caseiro que abraça a alma."
-  },
-
-  {
-    nome: "Café Caseiro 180ml",
-    preco: 13.9,
-    categoria: "caseiro",
-    serve: "",
-    carnes: false,
-    descricao: "Café fresquinho, passado na hora, com sabor caseiro para acompanhar seu pedido."
+    imagem: "imagens/porcaobatata.png",
+    descricao: "Batatas sequinhas e crocantes."
   },
 
   // -------- BEBIDAS --------
@@ -171,16 +124,8 @@ const produtos = [
     categoria: "bebidas",
     serve: "",
     carnes: false,
-    descricao: "Refrigerante gelado para acompanhar sua refeição."
-  },
-
-  {
-    nome: "Coca-Cola 1,5L",
-    preco: 15,
-    categoria: "bebidas",
-    serve: "",
-    carnes: false,
-    descricao: "Perfeita para compartilhar."
+    imagem: "imagens/porcaobatata.png",
+    descricao: "Refrigerante gelado."
   }
 
 ];
@@ -210,6 +155,9 @@ produtos.forEach((produto, index) => {
 
   container.innerHTML += `
     <div class="item">
+
+      <img src="${produto.imagem}" alt="${produto.nome}">
+
       <h3>${produto.nome}</h3>
       <p style="color:orange">${produto.serve}</p>
       <p><strong>R$ ${produto.preco.toFixed(2)}</strong></p>
@@ -249,7 +197,7 @@ produtos.forEach((produto, index) => {
   `;
 });
 
-// ================= FUNÇÕES =================
+// ================= RESTANTE DO CÓDIGO (CARRINHO E WHATSAPP) =================
 
 function toggleDetalhes(index) {
   const el = document.getElementById(`det-${index}`);
@@ -257,18 +205,15 @@ function toggleDetalhes(index) {
 }
 
 function adicionar(index) {
-
   let produto = produtos[index];
   let nomeFinal = produto.nome;
   let precoFinal = produto.preco;
 
-  // Carne
   if (produto.carnes) {
     const carne = document.getElementById(`carne-${index}`).value;
     nomeFinal += " - " + carne;
   }
 
-  // Adicionais
   if (produto.adicionais) {
     produto.adicionais.forEach((ad, i) => {
       const checkbox = document.getElementById(`ad-${index}-${i}`);
@@ -281,7 +226,6 @@ function adicionar(index) {
 
   carrinho.push({ nome: nomeFinal, preco: precoFinal });
   total += precoFinal;
-
   atualizarCarrinho();
 }
 
@@ -304,7 +248,6 @@ function limparCarrinho() {
 }
 
 function finalizarPedido() {
-
   if (carrinho.length === 0) {
     alert("Carrinho vazio!");
     return;
