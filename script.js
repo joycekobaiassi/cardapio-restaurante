@@ -154,11 +154,14 @@ produtos.forEach((produto, index) => {
   }
 
   container.innerHTML += `
-    <div class="item">
+<div class="item">
 
-      <img src="${produto.imagem}" alt="${produto.nome}">
+  <img src="${produto.imagem}" alt="${produto.nome}">
 
-      <h3>${produto.nome}</h3>
+  <div class="item-content">
+    <h3>${produto.nome}</h3>
+    <p style="color:orange">${produto.serve}</p>
+    <p><strong>R$ ${produto.preco.toFixed(2)}</strong></p>
       <p style="color:orange">${produto.serve}</p>
       <p><strong>R$ ${produto.preco.toFixed(2)}</strong></p>
 
@@ -264,3 +267,4 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
