@@ -77,14 +77,15 @@ const produtos = [
   // -------- CASEIRO --------
 
   {
-    nome: "Marmitex Caseiro Completo",
-    preco: 28,
-    categoria: "caseiro",
-    serve: "Serve 1 pessoa",
-    carnes: false,
-    imagem: "imagens/marmitex.png",
-    descricao: "Marmitex de comida caseira feita com carinho: arroz soltinho, feijão fresquinho, bife acebolado suculento, batata frita crocante e salada de alface com tomate. Uma refeição completa, saborosa e com gostinho de casa!."
-  },
+{
+  nome: "Marmitex Caseiro Completo",
+  preco: 28,
+  categoria: "caseiro",
+  serve: "Serve 1 pessoa",
+  carnes: true,
+  imagem: "imagens/marmitex.png",
+  descricao: "Marmitex de comida caseira feita com carinho: arroz soltinho, feijão fresquinho, bife acebolado suculento, batata frita crocante e salada de alface com tomate. Uma refeição completa, saborosa e com gostinho de casa!."
+}
 
   {
     nome: "Filé Acebolado com Fritas e Molho Verde",
@@ -165,15 +166,23 @@ produtos.forEach((produto, index) => {
 
         <div id="det-${index}" style="display:none; margin-top:10px;">
           <p>${produto.descricao}</p>
-
-          ${produto.carnes ? `
-            <label>Escolha a carne:</label><br>
-            <select id="carne-${index}">
-              <option value="Bovino">Bovino</option>
-              <option value="Frango">Frango</option>
-              <option value="Suíno">Suíno</option>
-            </select><br><br>
-          ` : ""}
+${produto.carnes ? `
+  <label>Escolha a carne:</label><br>
+  <select id="carne-${index}">
+    ${
+      produto.categoria === "caseiro"
+        ? `
+          <option value="Bife Bovino">Bife Bovino</option>
+          <option value="Bife de Frango">Bife de Frango</option>
+        `
+        : `
+          <option value="Bovino">Bovino</option>
+          <option value="Frango">Frango</option>
+          <option value="Suíno">Suíno</option>
+        `
+    }
+  </select><br><br>
+` : ""}
 
           <button onclick="adicionar(${index})">
             Adicionar ao pedido
@@ -241,6 +250,7 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
 
 
