@@ -77,7 +77,6 @@ const produtos = [
   // -------- CASEIRO --------
 
   {
-  {
     nome: "Marmitex Caseiro Completo",
     preco: 28,
     categoria: "caseiro",
@@ -261,6 +260,7 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
 
 
