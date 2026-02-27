@@ -50,7 +50,7 @@ const produtos = [
     categoria: "oriental",
     serve: "Serve bem 4 pessoas",
     carnes: true,
-    imagem: "imagens/yakisobafamilia.jpg",
+    imagem: "imagens/yakisobafamilia.jng",
     descricao: "Carne ou frango, macarrão, cenoura, pimentões, vagem, ervilha, repolho, couve-flor, brócolis, moyashi, cebolinha e ovo de codorna."
   },
 
@@ -114,17 +114,17 @@ const produtos = [
     categoria: "bebidas",
     serve: "",
     carnes: false,
-    imagem: "imagens/cocalata.jpg",
+    imagem: "imagens/cocalata.png",
     descricao: "Refrigerante gelado."
   },
 
   {
-    nome: "Coca-Cola 2 Litros",
+    nome: "Coca-Cola 1,5 litro",
     preco: 14,
     categoria: "bebidas",
     serve: "",
     carnes: false,
-    imagem: "imagens/cocalitro.jpg",
+    imagem: "imagens/cocalitro.jng",
     descricao: "Refrigerante gelado 2L."
   }
 
@@ -241,3 +241,4 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
