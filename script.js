@@ -150,40 +150,44 @@ produtos.forEach((produto, index) => {
   else if (produto.categoria === "caseiro") container = caseiro;
   else container = bebidas;
 
-  container.innerHTML += `
-    <div class="item">
+container.innerHTML += `
+  <div class="item">
 
-      <img src="${produto.imagem}" alt="${produto.nome}">
+    <img src="${produto.imagem}" alt="${produto.nome}">
 
-      <div class="item-content">
-        <h3>${produto.nome}</h3>
-        ${produto.serve ? `<p style="color:orange">${produto.serve}</p>` : ""}
-        <p><strong>R$ ${produto.preco.toFixed(2)}</strong></p>
+    <div class="item-content">
+      <h3>${produto.nome}</h3>
+      ${produto.serve ? `<p style="color:orange">${produto.serve}</p>` : ""}
+      <p><strong>R$ ${produto.preco.toFixed(2)}</strong></p>
 
-        <button onclick="toggleDetalhes(${index})">
-          Ver detalhes
+      <button onclick="toggleDetalhes(${index})">
+        Ver detalhes
+      </button>
+
+      <div id="det-${index}" style="display:none; margin-top:10px;">
+        <p>${produto.descricao}</p>
+
+        ${produto.carnes ? `
+          <label>Escolha a carne:</label><br>
+          <select id="carne-${index}">
+            ${
+              produto.categoria === "caseiro"
+                ? '<option value="Bife Bovino">Bife Bovino</option><option value="Bife de Frango">Bife de Frango</option>'
+                : '<option value="Bovino">Bovino</option><option value="Frango">Frango</option><option value="Suíno">Suíno</option>'
+            }
+          </select><br><br>
+        ` : ""}
+
+        <label>Observações:</label><br>
+        <textarea id="obs-${index}" placeholder="Ex: sem cebola..." style="width:100%; height:60px;"></textarea><br><br>
+
+        <button onclick="adicionar(${index})">
+          Adicionar ao pedido
         </button>
-
-        <div id="det-${index}" style="display:none; margin-top:10px;">
-          <p>${produto.descricao}</p>
-${produto.carnes ? `
-  <label>Escolha a carne:</label><br>
-  <select id="carne-${index}">
-    ${
-      produto.categoria === "caseiro"
-        ? '<option value="Bife Bovino">Bife Bovino</option><option value="Bife de Frango">Bife de Frango</option>'
-        : '<option value="Bovino">Bovino</option><option value="Frango">Frango</option><option value="Suíno">Suíno</option>'
-    }
-  </select><br><br>
-` : ""}
-
-          <button onclick="adicionar(${index})">
-            Adicionar ao pedido
-          </button>
-        </div>
       </div>
     </div>
-  `;
+  </div>
+`;
 });
 
 // ================= CARRINHO =================
@@ -243,6 +247,7 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
 
 
