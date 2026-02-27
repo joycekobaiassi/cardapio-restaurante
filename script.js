@@ -77,15 +77,15 @@ const produtos = [
   // -------- CASEIRO --------
 
   {
-{
-  nome: "Marmitex Caseiro Completo",
-  preco: 28,
-  categoria: "caseiro",
-  serve: "Serve 1 pessoa",
-  carnes: true,
-  imagem: "imagens/marmitex.png",
-  descricao: "Marmitex de comida caseira feita com carinho: arroz soltinho, feijão fresquinho, bife acebolado suculento, batata frita crocante e salada de alface com tomate. Uma refeição completa, saborosa e com gostinho de casa!."
-}
+  {
+    nome: "Marmitex Caseiro Completo",
+    preco: 28,
+    categoria: "caseiro",
+    serve: "Serve 1 pessoa",
+    carnes: true,
+    imagem: "imagens/marmitex.png",
+    descricao: "Marmitex de comida caseira feita com carinho: arroz soltinho, feijão fresquinho, bife acebolado suculento, batata frita crocante e salada de alface com tomate. Uma refeição completa, saborosa e com gostinho de casa!."
+  },
 
   {
     nome: "Filé Acebolado com Fritas e Molho Verde",
@@ -261,6 +261,7 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
 
 
