@@ -55,18 +55,22 @@ const produtos = [
   },
 {
   nome: "Frango Xadrez com Arroz",
-  descricao: "500g de frango xadrez com cenoura, pimentões e castanhas crocantes. Acompanha 500g de arroz soltinho.",
-  preco: 89.00,
-  imagem: "frangox.png",
-  categoria: "pratos"
+  preco: 89,
+  categoria: "oriental",
+  serve: "Serve 2 pessoas",
+  carnes: false,
+  imagem: "imagens/frangox.png",
+  descricao: "Uma combinação cheia de sabor! São 500g de Frango Xadrez com cenoura e pimentões, finalizado com castanhas crocantes. Acompanha 500g de arroz soltinho."
 },
 {
   nome: "Arroz Chinês ao Molho Agridoce",
-  descricao: "1kg de arroz com lombo suíno, cenoura, repolho, cebola, omelete em tiras e molho agridoce com shoyu e gergelim. Serve 2 pessoas.",
-  preco: 75.00,
-  imagem: "arrozchines.png",
-  categoria: "pratos"
-},
+  preco: 75,
+  categoria: "oriental",
+  serve: "Serve 2 pessoas",
+  carnes: false,
+  imagem: "imagens/arrozchines.png",
+  descricao: "Arroz soltinho com lombo suíno, cenoura, repolho, cebola, omelete em tiras e molho agridoce com shoyu e gergelim. Uma verdadeira viagem ao paladar da Ásia!"
+},,
   {
     nome: "Yakimeshi Tropical com Frango e Abacaxi 1kg",
     preco: 85,
@@ -273,6 +277,7 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
 
 
