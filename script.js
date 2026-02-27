@@ -190,9 +190,10 @@ produtos.forEach((produto, index) => {
 
           ${opcoesCarne}
 
-          <label>Observações:</label><br>
-          <textarea id="obs-${index}" placeholder="Ex: sem cebola..." style="width:100%; height:60px;"></textarea><br><br>
-
+       ${produto.categoria !== "bebidas" ? `
+  <label>Observações:</label><br>
+  <textarea id="obs-${index}" placeholder="Ex: sem cebola..." style="width:100%; height:40px;"></textarea><br><br>
+` : ""}
           <button onclick="adicionar(${index})">
             Adicionar ao pedido
           </button>
@@ -259,6 +260,7 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
 
 
