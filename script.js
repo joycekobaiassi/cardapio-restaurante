@@ -171,15 +171,8 @@ ${produto.carnes ? `
   <select id="carne-${index}">
     ${
       produto.categoria === "caseiro"
-        ? `
-          <option value="Bife Bovino">Bife Bovino</option>
-          <option value="Bife de Frango">Bife de Frango</option>
-        `
-        : `
-          <option value="Bovino">Bovino</option>
-          <option value="Frango">Frango</option>
-          <option value="Suíno">Suíno</option>
-        `
+        ? '<option value="Bife Bovino">Bife Bovino</option><option value="Bife de Frango">Bife de Frango</option>'
+        : '<option value="Bovino">Bovino</option><option value="Frango">Frango</option><option value="Suíno">Suíno</option>'
     }
   </select><br><br>
 ` : ""}
@@ -250,6 +243,7 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
 
 
