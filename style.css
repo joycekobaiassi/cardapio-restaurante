@@ -5,18 +5,29 @@ body {
   color: white;
 }
 
-/* HEADER COM IMAGEM COMPLETA */
+/* HEADER RESPONSIVO */
 
-.header-logo {
-  width: 100%;
-  height: 340px;
-  background: url("sobamania2.jpg") center no-repeat;
-  background-size: contain;
-  background-color: #000;
-  border-bottom: 2px solid #222;
+header {
+  text-align: center;
+  background: #000;
+  padding-bottom: 15px;
 }
 
-/* TÍTULOS DAS SEÇÕES */
+.logo {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.slogan {
+  color: #f4a261;
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+/* TÍTULOS */
 
 h2 {
   padding: 20px;
@@ -38,12 +49,6 @@ h2 {
   margin-bottom: 18px;
   border-radius: 10px;
   border: 1px solid #222;
-  transition: 0.3s;
-}
-
-.item:hover {
-  transform: translateY(-3px);
-  border-color: #333;
 }
 
 .item img {
@@ -51,7 +56,6 @@ h2 {
   height: 110px;
   object-fit: cover;
   border-radius: 12px;
-  flex-shrink: 0;
 }
 
 .item-content {
@@ -68,7 +72,6 @@ button {
   cursor: pointer;
   border-radius: 6px;
   font-weight: bold;
-  transition: 0.3s;
 }
 
 button:hover {
@@ -91,29 +94,3 @@ footer {
   background: #000;
   color: #aaa;
 }
-.header-logo {
-  width: 100%;
-  height: 380px;
-  background: url("sobamania2.jpg") center no-repeat;
-  background-size: contain;
-  background-color: #000;
-  border-bottom: 2px solid #222;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.header-text {
-  background: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  text-align: center;
-  padding: 15px 10px;
-}
-
-.header-text p {
-  font-size: 16px;
-  color: #f4a261;
-  font-weight: 500;
-}
-
-
