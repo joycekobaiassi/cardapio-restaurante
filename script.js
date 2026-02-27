@@ -123,6 +123,7 @@ const produtos = [
     preco: 14,
     categoria: "bebidas",
     serve: "",
+    carnes: false,
     imagem: "imagens/cocalitro.png",
     descricao: "Refrigerante gelado 2L."
   }
@@ -258,6 +259,7 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
 
 
