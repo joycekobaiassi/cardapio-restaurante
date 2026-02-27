@@ -150,44 +150,58 @@ produtos.forEach((produto, index) => {
   else if (produto.categoria === "caseiro") container = caseiro;
   else container = bebidas;
 
-container.innerHTML += `
-  <div class="item">
+  let opcoesCarne = "";
 
-    <img src="${produto.imagem}" alt="${produto.nome}">
+  if (produto.carnes) {
+    if (produto.categoria === "caseiro") {
+      opcoesCarne = `
+        <label>Escolha a carne:</label><br>
+        <select id="carne-${index}">
+          <option value="Bife Bovino">Bife Bovino</option>
+          <option value="Bife de Frango">Bife de Frango</option>
+        </select><br><br>
+      `;
+    } else {
+      opcoesCarne = `
+        <label>Escolha a carne:</label><br>
+        <select id="carne-${index}">
+          <option value="Bovino">Bovino</option>
+          <option value="Frango">Frango</option>
+          <option value="Suíno">Suíno</option>
+        </select><br><br>
+      `;
+    }
+  }
 
-    <div class="item-content">
-      <h3>${produto.nome}</h3>
-      ${produto.serve ? `<p style="color:orange">${produto.serve}</p>` : ""}
-      <p><strong>R$ ${produto.preco.toFixed(2)}</strong></p>
+  container.innerHTML += `
+    <div class="item">
+      <img src="${produto.imagem}" alt="${produto.nome}">
 
-      <button onclick="toggleDetalhes(${index})">
-        Ver detalhes
-      </button>
+      <div class="item-content">
+        <h3>${produto.nome}</h3>
+        ${produto.serve ? `<p style="color:orange">${produto.serve}</p>` : ""}
+        <p><strong>R$ ${produto.preco.toFixed(2)}</strong></p>
 
-      <div id="det-${index}" style="display:none; margin-top:10px;">
-        <p>${produto.descricao}</p>
-
-        ${produto.carnes ? `
-          <label>Escolha a carne:</label><br>
-          <select id="carne-${index}">
-            ${
-              produto.categoria === "caseiro"
-                ? '<option value="Bife Bovino">Bife Bovino</option><option value="Bife de Frango">Bife de Frango</option>'
-                : '<option value="Bovino">Bovino</option><option value="Frango">Frango</option><option value="Suíno">Suíno</option>'
-            }
-          </select><br><br>
-        ` : ""}
-
-        <label>Observações:</label><br>
-        <textarea id="obs-${index}" placeholder="Ex: sem cebola..." style="width:100%; height:60px;"></textarea><br><br>
-
-        <button onclick="adicionar(${index})">
-          Adicionar ao pedido
+        <button onclick="toggleDetalhes(${index})">
+          Ver detalhes
         </button>
+
+        <div id="det-${index}" style="display:none; margin-top:10px;">
+          <p>${produto.descricao}</p>
+
+          ${opcoesCarne}
+
+          <label>Observações:</label><br>
+          <textarea id="obs-${index}" placeholder="Ex: sem cebola..." style="width:100%; height:60px;"></textarea><br><br>
+
+          <button onclick="adicionar(${index})">
+            Adicionar ao pedido
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-`;
+  `;
+});
 });
 
 // ================= CARRINHO =================
@@ -247,6 +261,7 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
 
 
