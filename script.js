@@ -201,7 +201,6 @@ produtos.forEach((produto, index) => {
     </div>
   `;
 });
-});
 
 // ================= CARRINHO =================
 
@@ -260,6 +259,7 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
 
 
