@@ -50,7 +50,7 @@ const produtos = [
     categoria: "oriental",
     serve: "Serve bem 4 pessoas",
     carnes: true,
-    imagem: "imagens/yakisobafamilia.jng",
+    imagem: "imagens/yakisobafamilia.png",
     descricao: "Ingredientes do Yakisoba : Carne ou  Frango, Macarrão, cenoura, pimentão verde, vermelho e amarelo, vagem, ervilha,  repolho , couve flor , brócolis , moyashi , cebolinha  e ovo de codorna, utilizando tempero tradicional do Yakisoba da família. Esse Yakisoba serve bem 4 pessoas.."
   },
 
@@ -124,7 +124,7 @@ const produtos = [
     categoria: "bebidas",
     serve: "",
     carnes: false,
-    imagem: "imagens/cocalitro.jng",
+    imagem: "imagens/cocalitro.png",
     descricao: "Refrigerante gelado 2L."
   }
 
@@ -241,5 +241,6 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
 
