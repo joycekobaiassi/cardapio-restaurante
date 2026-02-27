@@ -66,7 +66,7 @@ const produtos = [
   preco: 75.00,
   imagem: "arrozchines.png",
   categoria: "pratos"
-}
+},
   {
     nome: "Yakimeshi Tropical com Frango e Abacaxi 1kg",
     preco: 85,
@@ -273,6 +273,7 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
 
 
