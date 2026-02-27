@@ -11,7 +11,7 @@ const produtos = [
     serve: "Serve 2 pessoas",
     carnes: true,
     imagem: "imagens/soba.png",
-    descricao: "Delicioso macarrão oriental servido com ovos e carne em tirinhas, finalizado com cebolinha fresca e um caldo quentinho e aromático.",
+    descricao: "Macarrão oriental com ovos, carne em tirinhas, cebolinha fresca e caldo aromático.",
     adicionais: [
       { nome: "Gengibre ralado", preco: 5 },
       { nome: "Hashi", preco: 4 },
@@ -25,7 +25,7 @@ const produtos = [
     categoria: "oriental",
     serve: "Serve 1 pessoa",
     carnes: true,
-    imagem: "imagens/soba.png",
+    imagem: "imagens/sobaindividual.png",
     descricao: "Versão individual com o mesmo sabor incrível.",
     adicionais: [
       { nome: "Gengibre ralado", preco: 5 },
@@ -41,12 +41,17 @@ const produtos = [
     serve: "Serve 2 pessoas",
     carnes: true,
     imagem: "imagens/yakisoba.png",
-    descricao: "Macarrão oriental com legumes frescos e tempero tradicional.",
-    adicionais: [
-      { nome: "Gengibre ralado", preco: 5 },
-      { nome: "Hashi", preco: 4 },
-      { nome: "Sachê de shoyu", preco: 2 }
-    ]
+    descricao: "Macarrão oriental com legumes frescos e tempero tradicional."
+  },
+
+  {
+    nome: "Yakisoba Família - 2kg",
+    preco: 120,
+    categoria: "oriental",
+    serve: "Serve bem 4 pessoas",
+    carnes: true,
+    imagem: "imagens/yakisobafamilia.jpg",
+    descricao: "Carne ou frango, macarrão, cenoura, pimentões, vagem, ervilha, repolho, couve-flor, brócolis, moyashi, cebolinha e ovo de codorna."
   },
 
   {
@@ -56,11 +61,7 @@ const produtos = [
     serve: "Serve 2 pessoas",
     carnes: false,
     imagem: "imagens/yakimeshi.png",
-    descricao: "Arroz soltinho com frango, abacaxi, presunto e legumes.",
-    adicionais: [
-      { nome: "Gengibre ralado", preco: 5 },
-      { nome: "Hashi", preco: 4 }
-    ]
+    descricao: "Arroz soltinho com frango, abacaxi, presunto e legumes."
   },
 
   {
@@ -70,11 +71,7 @@ const produtos = [
     serve: "Serve 1 pessoa",
     carnes: false,
     imagem: "imagens/yakimeshi.png",
-    descricao: "Versão individual leve e saborosa.",
-    adicionais: [
-      { nome: "Gengibre ralado", preco: 5 },
-      { nome: "Hashi", preco: 4 }
-    ]
+    descricao: "Versão individual leve e saborosa."
   },
 
   // -------- CASEIRO --------
@@ -86,11 +83,7 @@ const produtos = [
     serve: "Serve 1 pessoa",
     carnes: false,
     imagem: "imagens/marmitex.png",
-    descricao: "Arroz, feijão, bife acebolado, fritas e salada.",
-    adicionais: [
-      { nome: "Ovo cozido", preco: 2 },
-      { nome: "Salada extra de Legumes cozidos", preco: 4 }
-    ]
+    descricao: "Arroz, feijão, bife acebolado, fritas e salada."
   },
 
   {
@@ -99,11 +92,8 @@ const produtos = [
     categoria: "caseiro",
     serve: "Serve 1 pessoa",
     carnes: false,
-    imagem: "imagens/porcaofie.png",
-    descricao: "Contrafilé acebolado com fritas crocantes.",
-    adicionais: [
-      { nome: "Molho verde extra", preco: 5 }
-    ]
+    imagem: "imagens/porcaofile.png",
+    descricao: "Contrafilé acebolado com fritas crocantes."
   },
 
   {
@@ -124,8 +114,18 @@ const produtos = [
     categoria: "bebidas",
     serve: "",
     carnes: false,
-    imagem: "imagens/cocalata.png",
+    imagem: "imagens/cocalata.jpg",
     descricao: "Refrigerante gelado."
+  },
+
+  {
+    nome: "Coca-Cola 2 Litros",
+    preco: 14,
+    categoria: "bebidas",
+    serve: "",
+    carnes: false,
+    imagem: "imagens/cocalitro.jpg",
+    descricao: "Refrigerante gelado 2L."
   }
 
 ];
@@ -145,62 +145,46 @@ produtos.forEach((produto, index) => {
 
   let container;
 
-  if (produto.categoria === "oriental") {
-    container = oriental;
-  } else if (produto.categoria === "caseiro") {
-    container = caseiro;
-  } else {
-    container = bebidas;
-  }
+  if (produto.categoria === "oriental") container = oriental;
+  else if (produto.categoria === "caseiro") container = caseiro;
+  else container = bebidas;
 
   container.innerHTML += `
-<div class="item">
+    <div class="item">
 
-  <img src="${produto.imagem}" alt="${produto.nome}">
+      <img src="${produto.imagem}" alt="${produto.nome}">
 
-  <div class="item-content">
-    <h3>${produto.nome}</h3>
-    <p style="color:orange">${produto.serve}</p>
-    <p><strong>R$ ${produto.preco.toFixed(2)}</strong></p>
-      <p style="color:orange">${produto.serve}</p>
-      <p><strong>R$ ${produto.preco.toFixed(2)}</strong></p>
+      <div class="item-content">
+        <h3>${produto.nome}</h3>
+        ${produto.serve ? `<p style="color:orange">${produto.serve}</p>` : ""}
+        <p><strong>R$ ${produto.preco.toFixed(2)}</strong></p>
 
-      <button onclick="toggleDetalhes(${index})">
-        Ver detalhes
-      </button>
-
-      <div id="det-${index}" style="display:none; margin-top:10px;">
-        <p>${produto.descricao}</p>
-
-        ${produto.carnes ? `
-          <label>Escolha a carne:</label><br>
-          <select id="carne-${index}">
-            <option value="Bovino">Bovino</option>
-            <option value="Frango">Frango</option>
-            <option value="Suíno">Suíno</option>
-          </select><br><br>
-        ` : ""}
-
-        ${produto.adicionais ? `
-          <p><strong>Adicionais:</strong></p>
-          ${produto.adicionais.map((ad, i) => `
-            <label>
-              <input type="checkbox" id="ad-${index}-${i}">
-              ${ad.nome} (+R$ ${ad.preco})
-            </label><br>
-          `).join("")}
-          <br>
-        ` : ""}
-
-        <button onclick="adicionar(${index})">
-          Adicionar ao pedido
+        <button onclick="toggleDetalhes(${index})">
+          Ver detalhes
         </button>
+
+        <div id="det-${index}" style="display:none; margin-top:10px;">
+          <p>${produto.descricao}</p>
+
+          ${produto.carnes ? `
+            <label>Escolha a carne:</label><br>
+            <select id="carne-${index}">
+              <option value="Bovino">Bovino</option>
+              <option value="Frango">Frango</option>
+              <option value="Suíno">Suíno</option>
+            </select><br><br>
+          ` : ""}
+
+          <button onclick="adicionar(${index})">
+            Adicionar ao pedido
+          </button>
+        </div>
       </div>
     </div>
   `;
 });
 
-// ================= RESTANTE DO CÓDIGO (CARRINHO E WHATSAPP) =================
+// ================= CARRINHO =================
 
 function toggleDetalhes(index) {
   const el = document.getElementById(`det-${index}`);
@@ -215,16 +199,6 @@ function adicionar(index) {
   if (produto.carnes) {
     const carne = document.getElementById(`carne-${index}`).value;
     nomeFinal += " - " + carne;
-  }
-
-  if (produto.adicionais) {
-    produto.adicionais.forEach((ad, i) => {
-      const checkbox = document.getElementById(`ad-${index}-${i}`);
-      if (checkbox && checkbox.checked) {
-        nomeFinal += " + " + ad.nome;
-        precoFinal += ad.preco;
-      }
-    });
   }
 
   carrinho.push({ nome: nomeFinal, preco: precoFinal });
@@ -267,5 +241,3 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
-
-
