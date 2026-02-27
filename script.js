@@ -5,13 +5,13 @@ const produtos = [
   // -------- ORIENTAL --------
 
   {
-    nome: "Sobá 1L",
+    nome: "Sobá 1l Carne(Bovino, frango, suíno) - Comem Duas Pessoas",
     preco: 78,
     categoria: "oriental",
     serve: "Serve 2 pessoas",
     carnes: true,
     imagem: "imagens/soba.png",
-    descricao: "Macarrão oriental com ovos, carne em tirinhas, cebolinha fresca e caldo aromático.",
+    descricao: "Delicioso macarrão oriental servido com ovos e carne bovina cortados em tirinhas, finalizado com cebolinha fresca e um caldo quentinho e aromático. Uma combinação perfeita de sabor e conforto! Come bem uma pessoa. Serve 2 pessoa.",
     adicionais: [
       { nome: "Gengibre ralado", preco: 5 },
       { nome: "Hashi", preco: 4 },
@@ -20,13 +20,13 @@ const produtos = [
   },
 
   {
-    nome: "Sobá 500ml",
+    nome: "Sobá (Bovino, frango, suíno) 500ml -",
     preco: 45,
     categoria: "oriental",
     serve: "Serve 1 pessoa",
     carnes: true,
     imagem: "imagens/sobaindividual.png",
-    descricao: "Versão individual com o mesmo sabor incrível.",
+    descricao: "Delicioso macarrão oriental servido com ovos e carne bovina cortados em tirinhas, finalizado com cebolinha fresca e um caldo quentinho e aromático. Uma combinação perfeita de sabor e conforto! Come bem uma pessoa. Serve 1 pessoa.",
     adicionais: [
       { nome: "Gengibre ralado", preco: 5 },
       { nome: "Hashi", preco: 4 },
@@ -35,43 +35,43 @@ const produtos = [
   },
 
   {
-    nome: "Yakisoba 1kg",
+    nome: "Yakisoba - (Bovino, frango, suíno) - 1 kilo",
     preco: 67,
     categoria: "oriental",
     serve: "Serve 2 pessoas",
     carnes: true,
     imagem: "imagens/yakisoba.png",
-    descricao: "Macarrão oriental com legumes frescos e tempero tradicional."
+    descricao: "Ingredientes : Bovino ou Frango, Macarrão, cenoura, pimentão verde, vermelho e amarelo, vagem, ervilha, repolho , couve flor , brócolis , moyashi , cebolinha e ovo de codorna, utilizando tempero tradicional de família."
   },
 
   {
-    nome: "Yakisoba Família - 2kg",
+    nome: "Yakisoba Família  Frango- 2kg - Serve Bem 4 Pessoas",
     preco: 120,
     categoria: "oriental",
     serve: "Serve bem 4 pessoas",
     carnes: true,
     imagem: "imagens/yakisobafamilia.jng",
-    descricao: "Carne ou frango, macarrão, cenoura, pimentões, vagem, ervilha, repolho, couve-flor, brócolis, moyashi, cebolinha e ovo de codorna."
+    descricao: "Ingredientes do Yakisoba : Carne ou  Frango, Macarrão, cenoura, pimentão verde, vermelho e amarelo, vagem, ervilha,  repolho , couve flor , brócolis , moyashi , cebolinha  e ovo de codorna, utilizando tempero tradicional do Yakisoba da família. Esse Yakisoba serve bem 4 pessoas.."
   },
 
   {
-    nome: "Yakimeshi Tropical 1kg",
+    nome: "Yakimeshi Tropical com Frango e Abacaxi 1kg",
     preco: 85,
     categoria: "oriental",
     serve: "Serve 2 pessoas",
     carnes: false,
     imagem: "imagens/yakimeshi.png",
-    descricao: "Arroz soltinho com frango, abacaxi, presunto e legumes."
+    descricao: "Uma explosão de sabores surpreendente! Arroz soltinho com frango macio, cubinhos de abacaxi fresco, presunto, cenoura, cebolinha e tirinhas de ovo. O contraste entre o salgado e o doce deixa esse prato irresistível e cheio de personalidade. Perfeito para quem ama um toque tropical na culinária oriental! R$ 85,00 Servem 2 pessoas"
   },
 
   {
-    nome: "Yakimeshi Especial 500ml",
+    nome: "Yakimeshi Especial com Frango e Presunto 500ml",
     preco: 45,
     categoria: "oriental",
     serve: "Serve 1 pessoa",
     carnes: false,
     imagem: "imagens/yakimeshi.png",
-    descricao: "Versão individual leve e saborosa."
+    descricao: "Uma combinação deliciosa e leve: arroz soltinho com frango desfiado, cubinhos de presunto, cenoura picada, tirinhas de ovo e cebolinha fresca. Um prato inspirado na culinária oriental, equilibrado no sabor e perfeito para qualquer momento! Serve 1 pessoa R$ 45,00"
   },
 
   // -------- CASEIRO --------
@@ -83,17 +83,17 @@ const produtos = [
     serve: "Serve 1 pessoa",
     carnes: false,
     imagem: "imagens/marmitex.png",
-    descricao: "Arroz, feijão, bife acebolado, fritas e salada."
+    descricao: "Marmitex de comida caseira feita com carinho: arroz soltinho, feijão fresquinho, bife acebolado suculento, batata frita crocante e salada de alface com tomate. Uma refeição completa, saborosa e com gostinho de casa!."
   },
 
   {
-    nome: "Filé Acebolado com Fritas",
+    nome: "Filé Acebolado com Fritas e Molho Verde",
     preco: 65,
     categoria: "caseiro",
     serve: "Serve 1 pessoa",
     carnes: false,
     imagem: "imagens/porcaofile.png",
-    descricao: "Contrafilé acebolado com fritas crocantes."
+    descricao: "300g de suculento contrafilé em tiras, acebolado e finalizado com nosso molho especial da casa. Acompanha 200g de batatas fritas douradas e crocantes, servidas com nosso exclusivo molho verde caseiro. Uma combinação perfeita para quem busca sabor e qualidade! R$ 65,00."
   },
 
   {
@@ -241,4 +241,5 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
