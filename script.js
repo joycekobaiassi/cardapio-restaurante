@@ -124,7 +124,7 @@ const produtos = [
     categoria: "bebidas",
     serve: "",
     carnes: false,
-    imagem: "imagens/porcaobatata.png",
+    imagem: "imagens/cocalata.png",
     descricao: "Refrigerante gelado."
   }
 
@@ -267,4 +267,5 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+
 
