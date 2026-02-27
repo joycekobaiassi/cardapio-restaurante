@@ -94,3 +94,11 @@ footer {
   background: #000;
   color: #aaa;
 }
+.info-topo {
+  margin-top: 10px;
+  font-size: 14px;
+  background: #fff3cd;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
