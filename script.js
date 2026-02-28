@@ -277,6 +277,56 @@ function finalizarPedido() {
 
   window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
+function verificarEntrega() {
+  const resultado = document.getElementById("resultadoEntrega");
+  const formulario = document.getElementById("formEndereco");
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+
+      const latUsuario = position.coords.latitude;
+      const lonUsuario = position.coords.longitude;
+
+      // Coordenadas Sobá Mania
+      const latRestaurante = -27.5955;
+      const lonRestaurante = -48.6150;
+
+      const distancia = calcularDistancia(
+        latUsuario,
+        lonUsuario,
+        latRestaurante,
+        lonRestaurante
+      );
+
+      if (distancia <= 3) {
+        resultado.innerHTML = "✅ Seu endereço está apto para entrega!";
+        formulario.style.display = "block";
+      } else {
+        resultado.innerHTML = "❌ Seu endereço está a mais de 3km. Peça pelo iFood 🍜";
+        formulario.style.display = "none";
+      }
+
+    });
+  } else {
+    resultado.innerHTML = "Seu navegador não suporta geolocalização.";
+  }
+}
+
+function calcularDistancia(lat1, lon1, lat2, lon2) {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * Math.PI / 180) *
+    Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon / 2) *
+    Math.sin(dLon / 2);
+
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
 
 
 
