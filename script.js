@@ -9,8 +9,6 @@ produtos.forEach((produto, index) => {
     return;
   }
 
-  navigator.geolocation.getCurrentPosition(function(position) {
-
     const latUsuario = position.coords.latitude;
     const lonUsuario = position.coords.longitude;
 
@@ -73,3 +71,4 @@ produtos.forEach((produto, index) => {
 
     const latUsuario = position.coords.latitude;
 @@ -399,4 +459,5 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
+
