@@ -104,4 +104,32 @@ footer {
   font-weight: 500;
   display: inline-block;
 }
+.entrega {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 400px;
+}
+
+.entrega button {
+  background-color: #ffb703;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.entrega input {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#resultadoEntrega {
+  margin-top: 15px;
+  font-weight: bold;
+}
 
