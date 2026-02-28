@@ -27,18 +27,7 @@
     | 💳 Pagamento via <strong>Pix</strong>
   </div>
 </header>
-<section class="entrega">
-  <h2>Verifique se entregamos na sua região 🍜</h2>
-  <button onclick="verificarEntrega()">Verificar entrega</button>
-  <p id="resultadoEntrega"></p>
 
-  <div id="formEndereco" style="display: none;">
-    <h3>Preencha seu endereço</h3>
-    <input type="text" placeholder="Rua e número">
-    <input type="text" placeholder="Complemento">
-    <input type="text" placeholder="Bairro">
-  </div>
-</section>
 <h2>🍜 Pratos Orientais</h2>
 <section id="oriental" class="menu"></section>
 
@@ -52,6 +41,15 @@
   <h2>🛒 Seu Pedido</h2>
   <ul id="cart-items"></ul>
   <p id="total">Total: R$ 0,00</p>
+
+  <!-- FORMULÁRIO DE ENDEREÇO (SÓ APARECE SE ESTIVER NO RAIO) -->
+  <div id="formEndereco" style="display:none; margin-top:15px;">
+    <h3>📍 Informe seu endereço para entrega</h3>
+    <input type="text" id="rua" placeholder="Rua e número"><br><br>
+    <input type="text" id="complemento" placeholder="Complemento"><br><br>
+    <input type="text" id="bairro" placeholder="Bairro"><br><br>
+  </div>
+
   <button onclick="finalizarPedido()">Finalizar no WhatsApp</button>
   <button onclick="limparCarrinho()">Limpar Pedido</button>
 </div>
@@ -63,7 +61,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
