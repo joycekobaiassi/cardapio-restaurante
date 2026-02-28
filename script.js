@@ -261,21 +261,67 @@ function limparCarrinho() {
 }
 
 function finalizarPedido() {
+
   if (carrinho.length === 0) {
     alert("Carrinho vazio!");
     return;
   }
 
-  let mensagem = "Olá! Quero fazer um pedido:%0A%0A";
+  if (!navigator.geolocation) {
+    alert("Seu navegador não suporta geolocalização.");
+    return;
+  }
 
-  carrinho.forEach(item => {
-    mensagem += "- " + item.nome + "%0A";
+  navigator.geolocation.getCurrentPosition(function(position) {
+
+    const latUsuario = position.coords.latitude;
+    const lonUsuario = position.coords.longitude;
+
+    const latRestaurante = -27.5955;
+    const lonRestaurante = -48.6150;
+
+    const distancia = calcularDistancia(
+      latUsuario,
+      lonUsuario,
+      latRestaurante,
+      lonRestaurante
+    );
+
+    if (distancia > 3) {
+
+      window.open("https://www.ifood.com.br/delivery/sao-jose-sc/soba-mania-jardim-cidade-de-florianopolis/5ee33448-e773-442a-aab4-cd6a9efe2145", "_blank");
+      return;
+
+    }
+
+    // Se chegou aqui, está apto para entrega
+    const rua = document.getElementById("rua").value;
+    const complemento = document.getElementById("complemento").value;
+    const bairro = document.getElementById("bairro").value;
+
+    if (!rua || !bairro) {
+      document.getElementById("formEndereco").style.display = "block";
+      alert("Preencha seu endereço para continuar.");
+      return;
+    }
+
+    let mensagem = "Olá! Quero fazer um pedido:%0A%0A";
+
+    carrinho.forEach(item => {
+      mensagem += "- " + item.nome + "%0A";
+    });
+
+    mensagem += "%0ATotal: R$ " + total.toFixed(2);
+    mensagem += "%0A%0APagamento via Pix.";
+    mensagem += "%0A%0A📍 Endereço:%0A";
+    mensagem += "Rua: " + rua + "%0A";
+    mensagem += "Complemento: " + complemento + "%0A";
+    mensagem += "Bairro: " + bairro;
+
+    window.open(`https://wa.me/5548991763218?text=${mensagem}`, "_blank");
+
   });
 
-  mensagem += "%0ATotal: R$ " + total.toFixed(2);
-  mensagem += "%0A%0APagamento via Pix.";
-
-  window.open(`https://wa.me/5548991763218?text=${mensagem}`);
 }
 function verificarEntrega() {
   const resultado = document.getElementById("resultadoEntrega");
@@ -334,6 +380,7 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   return R * c;
 }
+
 
 
 
