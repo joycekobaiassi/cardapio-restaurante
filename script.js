@@ -3,23 +3,33 @@
 const produtos = [
 
   {
-    nome: "Sobá 1l Carne(Bovino, frango, suíno) - Comem Duas Pessoas",
+    nome: "Sobá 1l Carne (Bovino, Frango, Suíno) - Serve 2 Pessoas",
     preco: 78,
     categoria: "oriental",
     serve: "Serve 2 pessoas",
     carnes: true,
     imagem: "imagens/soba.png",
-    descricao: "Delicioso macarrão oriental servido com ovos e carne bovina cortados em tirinhas, finalizado com cebolinha fresca.",
+    descricao: "Macarrão oriental tradicional com caldo aromático."
   },
 
   {
-    nome: "Sobá 500ml",
+    nome: "Sobá 500ml - Serve 1 Pessoa",
     preco: 45,
     categoria: "oriental",
     serve: "Serve 1 pessoa",
     carnes: true,
     imagem: "imagens/sobaindividual.png",
-    descricao: "Sobá individual tradicional.",
+    descricao: "Sobá individual tradicional."
+  },
+
+  {
+    nome: "Yakisoba 1kg",
+    preco: 67,
+    categoria: "oriental",
+    serve: "Serve 2 pessoas",
+    carnes: true,
+    imagem: "imagens/yakisoba.png",
+    descricao: "Yakisoba tradicional da família."
   },
 
   {
@@ -29,7 +39,27 @@ const produtos = [
     serve: "Serve 1 pessoa",
     carnes: true,
     imagem: "imagens/marmitex.png",
-    descricao: "Arroz, feijão, bife acebolado e batata.",
+    descricao: "Arroz, feijão, bife acebolado e batata."
+  },
+
+  {
+    nome: "Filé Acebolado com Fritas",
+    preco: 65,
+    categoria: "caseiro",
+    serve: "Serve 1 pessoa",
+    carnes: false,
+    imagem: "imagens/porcaofile.png",
+    descricao: "Contrafilé acebolado com fritas."
+  },
+
+  {
+    nome: "Batatas Fritas 300g",
+    preco: 28,
+    categoria: "caseiro",
+    serve: "",
+    carnes: false,
+    imagem: "imagens/porcaobatata.png",
+    descricao: "Batatas crocantes."
   },
 
   {
@@ -39,7 +69,17 @@ const produtos = [
     serve: "",
     carnes: false,
     imagem: "imagens/cocalata.png",
-    descricao: "Refrigerante gelado.",
+    descricao: "Refrigerante gelado."
+  },
+
+  {
+    nome: "Coca-Cola 1,5L",
+    preco: 14,
+    categoria: "bebidas",
+    serve: "",
+    carnes: false,
+    imagem: "imagens/cocalitro.png",
+    descricao: "Refrigerante 1,5 litro."
   }
 
 ];
@@ -79,12 +119,7 @@ produtos.forEach((produto, index) => {
 
 function adicionar(index) {
   const produto = produtos[index];
-
-  carrinho.push({
-    nome: produto.nome,
-    preco: produto.preco
-  });
-
+  carrinho.push(produto);
   total += produto.preco;
   atualizarCarrinho();
 }
@@ -113,11 +148,6 @@ function finalizarPedido() {
 
   if (carrinho.length === 0) {
     alert("Carrinho vazio!");
-    return;
-  }
-
-  if (!navigator.geolocation) {
-    alert("Seu navegador não suporta geolocalização.");
     return;
   }
 
@@ -171,11 +201,10 @@ function finalizarPedido() {
     mensagem += "Complemento: " + complemento + "%0A";
     mensagem += "Bairro: " + bairro;
 
-    mensagem += "%0A%0APagamento via Pix.";
-
     window.open(`https://wa.me/5548991763218?text=${mensagem}`, "_blank");
 
   });
+
 }
 
 // ================= CALCULAR DISTÂNCIA =================
