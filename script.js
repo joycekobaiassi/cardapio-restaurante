@@ -298,13 +298,20 @@ function verificarEntrega() {
         lonRestaurante
       );
 
-      if (distancia <= 3) {
-        resultado.innerHTML = "✅ Seu endereço está apto para entrega!";
-        formulario.style.display = "block";
-      } else {
-        resultado.innerHTML = "❌ Seu endereço está a mais de 3km. Peça pelo iFood 🍜";
-        formulario.style.display = "none";
-      }
+if (distancia <= 3) {
+  resultado.innerHTML = "✅ Seu endereço está apto para entrega!";
+  formulario.style.display = "block";
+} else {
+  resultado.innerHTML = `
+    ❌ Seu endereço está a mais de 3km.<br>
+    <a href="https://www.ifood.com.br/delivery/sao-jose-sc/soba-mania-jardim-cidade-de-florianopolis/5ee33448-e773-442a-aab4-cd6a9efe2145" 
+       target="_blank" 
+       style="color: red; font-weight: bold; text-decoration: underline;">
+       Clique aqui para pedir pelo iFood 🍜
+    </a>
+  `;
+  formulario.style.display = "none";
+}
 
     });
   } else {
@@ -327,6 +334,7 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   return R * c;
 }
+
 
 
 
