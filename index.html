@@ -27,7 +27,18 @@
     | 💳 Pagamento via <strong>Pix</strong>
   </div>
 </header>
+<section class="entrega">
+  <h2>Verifique se entregamos na sua região 🍜</h2>
+  <button onclick="verificarEntrega()">Verificar entrega</button>
+  <p id="resultadoEntrega"></p>
 
+  <div id="formEndereco" style="display: none;">
+    <h3>Preencha seu endereço</h3>
+    <input type="text" placeholder="Rua e número">
+    <input type="text" placeholder="Complemento">
+    <input type="text" placeholder="Bairro">
+  </div>
+</section>
 <h2>🍜 Pratos Orientais</h2>
 <section id="oriental" class="menu"></section>
 
@@ -52,6 +63,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
